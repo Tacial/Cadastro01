@@ -27,11 +27,9 @@ function openModal(edit = false, index = 0) {
     sFuncao.value = ''
     sSalario.value = ''
   }
-  
 }
 
 function editItem(index) {
-
   openModal(true, index)
 }
 
@@ -59,7 +57,6 @@ function insertItem(item, index) {
 }
 
 btnSalvar.onclick = e => {
-  
   if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
     return
   }
@@ -73,7 +70,6 @@ btnSalvar.onclick = e => {
   } else {
     itens.push({'nome': sNome.value, 'funcao': sFuncao.value, 'salario': sSalario.value})
   }
-
   setItensBD()
 
   modal.classList.remove('active')
@@ -87,7 +83,6 @@ function loadItens() {
   itens.forEach((item, index) => {
     insertItem(item, index)
   })
-
 }
 
 const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
